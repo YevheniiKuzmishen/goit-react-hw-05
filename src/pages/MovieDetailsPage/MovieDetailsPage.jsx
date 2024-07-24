@@ -11,9 +11,9 @@ export default function MovieDetailsPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const location = useLocation();
   const imgBaseUrl = "https://image.tmdb.org/t/p/w200";
-  const backLinkRef = useRef(location.state?.from ?? "/");
+  const location = useLocation();
+  const backLinkRef = useRef(location.state?.from || "/movies");
 
   useEffect(() => {
     async function fetchMovie() {
@@ -51,14 +51,6 @@ export default function MovieDetailsPage() {
         backLinkRef={backLinkRef}
         imgBaseUrl={imgBaseUrl}
       />
-      {/* <ul>
-        <li>
-          <NavLink to="cast">Cast</NavLink>
-        </li>
-        <li>
-          <NavLink to="reviews">Reviews</NavLink>
-        </li>
-      </ul> */}
       <Toaster />
     </div>
   );

@@ -37,7 +37,10 @@ export default function MoviePage() {
       <SearchMovie value={value} onSearch={handleSearch} />
 
       {searchMovies.length > 0 && (
-        <SearchMovieList searchMovies={searchMovies} state={location} />
+        <SearchMovieList
+          searchMovies={searchMovies}
+          state={{ from: location }}
+        />
       )}
     </div>
   );
