@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import css from "./MovieDetailsInfo.module.css";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import { SlArrowLeftCircle } from "react-icons/sl";
+import css from "./MovieDetailsInfo.module.css";
 
 export default function MovieDetailsInfo({
   movieDetail,
@@ -13,12 +13,18 @@ export default function MovieDetailsInfo({
   return (
     <>
       <div className={css.goBack}>
-        <Link to={backLinkRef.current}>
+        <Link to={backLinkRef.current} className={css.goBack}>
           <SlArrowLeftCircle /> Go Back
         </Link>
       </div>
       <div className={css.detailContent}>
-        {poster_path && <img src={imgBaseUrl + poster_path} alt={title} />}
+        {poster_path && (
+          <img
+            src={imgBaseUrl + poster_path}
+            alt={title}
+            className={css.movieImg}
+          />
+        )}
         <div className={css.description}>
           <h2>{title}</h2>
           <p>Vote Average: {vote_average}</p>
@@ -26,12 +32,16 @@ export default function MovieDetailsInfo({
           <p>{overview}</p>
           <h3>Genres</h3>
           <p>{genres.map((genre) => `${genre.name} `)}</p>
-          <ul>
+          <ul className={css.ulLink}>
             <li>
-              <NavLink to="cast">Cast</NavLink>
+              <NavLink className={css.linkCast} to="cast">
+                Cast
+              </NavLink>
             </li>
             <li>
-              <NavLink to="reviews">Reviews</NavLink>
+              <NavLink className={css.linkReviews} to="reviews">
+                Reviews
+              </NavLink>
             </li>
           </ul>
         </div>

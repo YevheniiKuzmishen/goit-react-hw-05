@@ -1,8 +1,16 @@
 .link {
   text-decoration: none;
-  color: black;
+  color: rgb(254, 254, 254);
 }
 
 .active {
-  color: orangered;
+  color: rgb(234, 70, 11);
+}
+
+.styleNav {
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 40px;
 }

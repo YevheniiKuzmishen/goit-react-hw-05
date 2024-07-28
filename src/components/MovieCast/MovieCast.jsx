@@ -35,7 +35,7 @@ export default function MovieCast() {
               <div className={css.noImage}>No Image Available</div>
             )}
           </div>
-          <div>{name}</div>
+          <div className={css.actorName}>{name} </div>
         </li>
       ))}
     </ul>

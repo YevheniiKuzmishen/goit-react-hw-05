@@ -1,0 +1,53 @@
+.goBack {
+  color: aliceblue;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+
+.goBack:hover {
+  color: red;
+}
+
+.description {
+  padding-left: 20px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: aliceblue;
+}
+
+.movieImg {
+  padding-left: 20px;
+}
+
+.ulLink {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.linkCast {
+  color: aliceblue;
+  color: aliceblue;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.linkCast:hover {
+  color: red;
+}
+
+.linkReviews {
+  color: aliceblue;
+  color: aliceblue;
+  padding-left: 10px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.linkReviews:hover {
+  color: red;
+}

@@ -1,0 +1,10 @@
+.movieItem {
+  color: aliceblue;
+  padding-left: 120px;
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+
+.movieItem:hover {
+  color: red;
+}

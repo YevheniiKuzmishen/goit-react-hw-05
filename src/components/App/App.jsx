@@ -1,16 +1,22 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Navigations from "../Navigations/Navigations";
-import HomePage from "../../pages/HomePage/HomePage";
-import MoviePage from "../../pages/MoviePage/MoviePage";
-import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage";
-import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
-import MovieCast from "../MovieCast/MovieCast";
-import MovieReviews from "../MovieReviews/MovieReviews";
+import css from "./App.module.css";
+
+const Navigations = lazy(() => import("../Navigations/Navigations"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const MoviePage = lazy(() => import("../../pages/MoviePage/MoviePage"));
+const MovieDetailsPage = lazy(() =>
+  import("../../pages/MovieDetailsPage/MovieDetailsPage")
+);
+const NotFoundPage = lazy(() =>
+  import("../../pages/NotFoundPage/NotFoundPage")
+);
+const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
+const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
 
 export default function App() {
   return (
-    <div>
+    <div className={css.appDiv}>
       <Suspense fallback={<div>Loading...</div>}>
         <Navigations />
         <Routes>

@@ -1,0 +1,18 @@
+.formDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchMovieForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.searchMovieInput {
+  padding-left: 20px;
+  width: 500px;
+  height: 40px;
+}

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { getSearchMovie } from "../../movies-api";
 import SearchMovie from "../../components/SearchMovie/SearchMovie";
-import SearchMovieList from "../../components/SearchMovieList/SearchMovieList";
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function MoviePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") ?? "";
   const [value, setValue] = useState(query);
   const [searchMovies, setSearchMovies] = useState([]);
-  const location = useLocation();
 
   useEffect(() => {
     async function fetchSearchMovie() {
@@ -36,11 +35,8 @@ export default function MoviePage() {
     <div>
       <SearchMovie value={value} onSearch={handleSearch} />
 
-      {searchMovies.length > 0 && (
-        <SearchMovieList
-          searchMovies={searchMovies}
-          state={{ from: location }}
-        />
+      {searchMovies && searchMovies.length > 0 && (
+        <MovieList movies={searchMovies} />
       )}
     </div>
   );
